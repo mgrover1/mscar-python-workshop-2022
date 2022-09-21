@@ -17,9 +17,7 @@ tags:
 
 # Execute the notebooks upon build
 execute:
-  execute_notebooks: cache
-  timeout: 600
-  allow_errors: True
+  execute_notebooks: "off"
 
 # Add a few extensions to help with parsing content
 parse:
