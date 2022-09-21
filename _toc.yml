@@ -1,6 +1,6 @@
 format: jb-book
 root: README
 parts:
-  - caption: Introduction
+  - caption: Radar with Py-ART
     chapters:
-      - file: notebooks/notebook-template
+      - file: notebooks/pyart-basics
