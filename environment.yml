@@ -1,9 +1,13 @@
-name: cookbook-dev
+name: mscar-python-tutorial-dev
 channels:
   - conda-forge
 dependencies:
   - jupyter-book
   - jupyterlab
+  - matplotlib
+  - cartopy
   - pip
   - pip:
+      - arm_pyart
       - sphinx-pythia-theme
+      - pythia-datasets
