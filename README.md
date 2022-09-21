@@ -5,7 +5,7 @@ tags: [python, meteorology, climate]
 ---
 
 
-<img src="thumbnail.png" alt="thumbnail" width="300"/>
+<img src="https://raw.githubusercontent.com/ProjectPythiaCookbooks/radar-cookbook/main/thumbnail.png" alt="thumbnail" width="300"/>
 
 # MSCAR Python Workshop
 
