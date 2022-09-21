@@ -6,8 +6,10 @@ dependencies:
   - jupyterlab
   - matplotlib
   - cartopy
+  - metpy
   - pip
   - pip:
       - arm_pyart
+      - act-atmos
       - sphinx-pythia-theme
       - pythia-datasets
