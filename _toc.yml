@@ -4,3 +4,7 @@ parts:
   - caption: Radar with Py-ART
     chapters:
       - file: notebooks/pyart-basics
+  - caption: Observations with ACT
+    chapters:
+      - file: notebooks/act-basics
+
