@@ -11,5 +11,6 @@ dependencies:
   - pip:
       - arm_pyart
       - act-atmos
+      - intake_esm
       - sphinx-pythia-theme
       - pythia-datasets
