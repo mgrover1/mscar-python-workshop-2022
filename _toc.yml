@@ -7,4 +7,6 @@ parts:
   - caption: Observations with ACT
     chapters:
       - file: notebooks/act-basics
-
+  - caption: Earth System Model Data with Pangeo
+    chapters:
+      - file: notebooks/intake-esm-basics
