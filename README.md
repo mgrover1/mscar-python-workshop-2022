@@ -21,18 +21,46 @@ This material will be used to provide an overview of how to use Python for the a
 </a>
 
 ## Structure
-(State one or more sections that will comprise the notebook. E.g., *This cookbook is broken up into two main sections - "Foundations" and "Example Workflows."* Then, describe each section below.)
 
 ### Radar Data with Py-ART
+Within this section, we cover the basics of Py-ART and apply it to a sample analysis workflow.
 
 ### Weather Observations with ACT
+The Atmospheric data Community Toolkit (ACT) is a helpful tool when working with atmospheric observations! This portion will focus on reading, visualizing, and analyzing observational datasets from the Atmospheric Radiation Measurement user facility.
 
 ### Climate Analysis with Pangeo
+Our last section covers how to use the Pangeo stack, specifically Intake-ESM, Xarray, and other components to inspect and visualize earth system model data.
 
 ## Running the Notebooks
 You can either run the notebook using [Binder](https://mybinder.org/) or on your local machine.
 
-### Running on Binder
+### Using on the Pangeo Binder (**Recommended**)
+
+#### 1. Make Sure You Have a Github Account
+The first step is to make sure you have a Github Account.
+
+Here is the link if you do have one already:
+- [Github account creation link](https://github.com/join)
+
+#### 2. Log into Pangeo Binder
+Next, sign in and authenticate the Pangeo Binder, which is the platform we will use for the workshop:
+- [Pangeo Binder Link](https://aws-uswest2-binder.pangeo.io)
+
+The JupyterHub instance we use for this course is relatively small in memory and compute power (~10 GB of memory, 2 CPU cores). For more information about all of the open computational resrouces available within the Pangeo community, check out the [Pangeo Cloud](https://pangeo.io/cloud.html) documentation.
+
+#### 3. Launch our Environment
+Now that we have our authentication set up, we can access our content!
+
+Use the following link to launch into the binder:
+- [Binder Link](https://aws-uswest2-binder.pangeo.io/v2/gh/mgrover1/mscar-python-workshop-dev/main?labpath=notebooks)
+
+If you are having issues with that (ex. it is taking a long time), try using the following link:
+```
+https://hub.aws-uswest2-binder.pangeo.io/user/{your_github_username}/lab
+```
+Where you replace `{your_github_username}` with your github username (ex. `mgrover1`)
+
+#### General Binder Advice
 
 The simplest way to interact with a Jupyter Notebook is through
 [Binder](https://mybinder.org/), which enables the execution of a
@@ -49,7 +77,7 @@ have no output at first, until you execute them by pressing
 a live Jupyter notebook are described in [Getting Started with
 Jupyter](https://foundations.projectpythia.org/foundations/getting-started-jupyter.html).
 
-### Running on Your Own Machine
+### Running on Your Own Computer
 If you are interested in running this material locally on your computer, you will need to follow this workflow:
 
 (Replace "cookbook-example" with the title of your cookbooks)   
@@ -66,7 +94,7 @@ If you are interested in running this material locally on your computer, you wil
 1. Create and activate your conda environment from the `environment.yml` file
     ```bash
     conda env create -f environment.yml
-    conda activate mscar-python-workshop-2022-dev
+    conda activate mscar-python-tutorial-dev
     ```  
 1.  Move into the `notebooks` directory and start up Jupyterlab
     ```bash
