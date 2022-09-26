@@ -350,13 +350,39 @@ All code in Pythia Cookbooks is licensed under Apache 2.0. All other non-code co
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#running-on-binder">
-     Running on Binder
+    <a class="reference internal nav-link" href="#using-on-the-pangeo-binder-recommended">
+     Using on the Pangeo Binder (
+     <strong>
+      Recommended
+     </strong>
+     )
     </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#make-sure-you-have-a-github-account">
+       1. Make Sure You Have a Github Account
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#log-into-pangeo-binder">
+       2. Log into Pangeo Binder
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#launch-our-environment">
+       3. Launch our Environment
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#general-binder-advice">
+       General Binder Advice
+      </a>
+     </li>
+    </ul>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#running-on-your-own-machine">
-     Running on Your Own Machine
+    <a class="reference internal nav-link" href="#running-on-your-own-computer">
+     Running on Your Own Computer
     </a>
    </li>
   </ul>
@@ -393,22 +419,55 @@ All code in Pythia Cookbooks is licensed under Apache 2.0. All other non-code co
 </div>
 <div class="section" id="structure">
 <h2>Structure<a class="headerlink" href="#structure" title="Permalink to this headline"><i class="fas fa-link"></i></a></h2>
-<p>(State one or more sections that will comprise the notebook. E.g., <em>This cookbook is broken up into two main sections - “Foundations” and “Example Workflows.”</em> Then, describe each section below.)</p>
 <div class="section" id="radar-data-with-py-art">
 <h3>Radar Data with Py-ART<a class="headerlink" href="#radar-data-with-py-art" title="Permalink to this headline"><i class="fas fa-link"></i></a></h3>
+<p>Within this section, we cover the basics of Py-ART and apply it to a sample analysis workflow.</p>
 </div>
 <div class="section" id="weather-observations-with-act">
 <h3>Weather Observations with ACT<a class="headerlink" href="#weather-observations-with-act" title="Permalink to this headline"><i class="fas fa-link"></i></a></h3>
+<p>The Atmospheric data Community Toolkit (ACT) is a helpful tool when working with atmospheric observations! This portion will focus on reading, visualizing, and analyzing observational datasets from the Atmospheric Radiation Measurement user facility.</p>
 </div>
 <div class="section" id="climate-analysis-with-pangeo">
 <h3>Climate Analysis with Pangeo<a class="headerlink" href="#climate-analysis-with-pangeo" title="Permalink to this headline"><i class="fas fa-link"></i></a></h3>
+<p>Our last section covers how to use the Pangeo stack, specifically Intake-ESM, Xarray, and other components to inspect and visualize earth system model data.</p>
 </div>
 </div>
 <div class="section" id="running-the-notebooks">
 <h2>Running the Notebooks<a class="headerlink" href="#running-the-notebooks" title="Permalink to this headline"><i class="fas fa-link"></i></a></h2>
 <p>You can either run the notebook using <a class="reference external" href="https://mybinder.org/">Binder</a> or on your local machine.</p>
-<div class="section" id="running-on-binder">
-<h3>Running on Binder<a class="headerlink" href="#running-on-binder" title="Permalink to this headline"><i class="fas fa-link"></i></a></h3>
+<div class="section" id="using-on-the-pangeo-binder-recommended">
+<h3>Using on the Pangeo Binder (<strong>Recommended</strong>)<a class="headerlink" href="#using-on-the-pangeo-binder-recommended" title="Permalink to this headline"><i class="fas fa-link"></i></a></h3>
+<div class="section" id="make-sure-you-have-a-github-account">
+<h4>1. Make Sure You Have a Github Account<a class="headerlink" href="#make-sure-you-have-a-github-account" title="Permalink to this headline"><i class="fas fa-link"></i></a></h4>
+<p>The first step is to make sure you have a Github Account.</p>
+<p>Here is the link if you do have one already:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://github.com/join">Github account creation link</a></p></li>
+</ul>
+</div>
+<div class="section" id="log-into-pangeo-binder">
+<h4>2. Log into Pangeo Binder<a class="headerlink" href="#log-into-pangeo-binder" title="Permalink to this headline"><i class="fas fa-link"></i></a></h4>
+<p>Next, sign in and authenticate the Pangeo Binder, which is the platform we will use for the workshop:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://aws-uswest2-binder.pangeo.io">Pangeo Binder Link</a></p></li>
+</ul>
+<p>The JupyterHub instance we use for this course is relatively small in memory and compute power (~10 GB of memory, 2 CPU cores). For more information about all of the open computational resrouces available within the Pangeo community, check out the <a class="reference external" href="https://pangeo.io/cloud.html">Pangeo Cloud</a> documentation.</p>
+</div>
+<div class="section" id="launch-our-environment">
+<h4>3. Launch our Environment<a class="headerlink" href="#launch-our-environment" title="Permalink to this headline"><i class="fas fa-link"></i></a></h4>
+<p>Now that we have our authentication set up, we can access our content!</p>
+<p>Use the following link to launch into the binder:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://aws-uswest2-binder.pangeo.io/v2/gh/mgrover1/mscar-python-workshop-dev/main?labpath=notebooks">Binder Link</a></p></li>
+</ul>
+<p>If you are having issues with that (ex. it is taking a long time), try using the following link:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">hub</span><span class="o">.</span><span class="n">aws</span><span class="o">-</span><span class="n">uswest2</span><span class="o">-</span><span class="n">binder</span><span class="o">.</span><span class="n">pangeo</span><span class="o">.</span><span class="n">io</span><span class="o">/</span><span class="n">user</span><span class="o">/</span><span class="p">{</span><span class="n">your_github_username</span><span class="p">}</span><span class="o">/</span><span class="n">lab</span>
+</pre></div>
+</div>
+<p>Where you replace <code class="docutils literal notranslate"><span class="pre">{your_github_username}</span></code> with your github username (ex. <code class="docutils literal notranslate"><span class="pre">mgrover1</span></code>)</p>
+</div>
+<div class="section" id="general-binder-advice">
+<h4>General Binder Advice<a class="headerlink" href="#general-binder-advice" title="Permalink to this headline"><i class="fas fa-link"></i></a></h4>
 <p>The simplest way to interact with a Jupyter Notebook is through
 <a class="reference external" href="https://mybinder.org/">Binder</a>, which enables the execution of a
 <a class="reference external" href="https://jupyterbook.org">Jupyter Book</a> in the cloud. The details of how this works are not
@@ -424,8 +483,9 @@ have no output at first, until you execute them by pressing
 a live Jupyter notebook are described in <a class="reference external" href="https://foundations.projectpythia.org/foundations/getting-started-jupyter.html">Getting Started with
 Jupyter</a>.</p>
 </div>
-<div class="section" id="running-on-your-own-machine">
-<h3>Running on Your Own Machine<a class="headerlink" href="#running-on-your-own-machine" title="Permalink to this headline"><i class="fas fa-link"></i></a></h3>
+</div>
+<div class="section" id="running-on-your-own-computer">
+<h3>Running on Your Own Computer<a class="headerlink" href="#running-on-your-own-computer" title="Permalink to this headline"><i class="fas fa-link"></i></a></h3>
 <p>If you are interested in running this material locally on your computer, you will need to follow this workflow:</p>
 <p>(Replace “cookbook-example” with the title of your cookbooks)</p>
 <ol>
@@ -441,7 +501,7 @@ Jupyter</a>.</p>
 </li>
 <li><p>Create and activate your conda environment from the <code class="docutils literal notranslate"><span class="pre">environment.yml</span></code> file</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda env create -f environment.yml
-conda activate mscar-python-workshop-2022-dev
+conda activate mscar-python-tutorial-dev
 </pre></div>
 </div>
 </li>
@@ -537,7 +597,7 @@ jupyter lab
         
           By the <a href="https://projectpythia.org/">Project Pythia</a> Community.
         
-          Last updated on 23 September 2022.
+          Last updated on 26 September 2022.
         </p>
       </div>
     </div>
