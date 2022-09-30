@@ -87,7 +87,7 @@ If you are interested in running this material locally on your computer, you wil
    ```bash
     git clone https://github.com/mgrover1/mscar-python-workshop-2022.git
     ```  
-1. Move into the `cookbook-example` directory
+1. Move into the `mscar-python-workshop-2022` directory
     ```bash
     cd mscar-python-workshop-2022
     ```  
