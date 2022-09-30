@@ -10036,13 +10036,6 @@ Coordinates:
 <img alt="../../_images/xarray-intro_86_1.png" src="../../_images/xarray-intro_86_1.png" />
 </div>
 </div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ds</span><span class="p">[[</span><span class="s2">&quot;temp&quot;</span><span class="p">,</span> <span class="s2">&quot;reflectivity&quot;</span><span class="p">,</span> <span class="s2">&quot;mean_doppler_velocity&quot;</span><span class="p">]]</span><span class="o">.</span><span class="n">sel</span><span class="p">(</span><span class="n">time</span><span class="o">=</span><span class="nb">slice</span><span class="p">(</span><span class="s2">&quot;2022-03-14T00:00:00&quot;</span><span class="p">,</span> <span class="s2">&quot;2022-03-14T04:0:00&quot;</span><span class="p">))</span><span class="o">.</span><span class="n">to_netcdf</span><span class="p">(</span><span class="s2">&quot;data/sample_kazr_data.nc&quot;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
 <p>Xarray has recognized that the <code class="docutils literal notranslate"><span class="pre">DataArray</span></code> object calling the plot method has two coordinate variables, and generates a 2D plot using the <code class="docutils literal notranslate"><span class="pre">pcolormesh</span></code> method from Matplotlib.</p>
 <p>In this case, we are looking at air temperatures on the 1000 hPa isobaric surface over North America. We could of course improve this figure by using <span class="xref myst">Cartopy</span> to handle the map projection and geographic features!</p>
 </div>
