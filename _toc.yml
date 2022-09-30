@@ -9,4 +9,4 @@ parts:
       - glob: notebooks/act/*
   - caption: Pangeo and Intake-ESM
     chapters:
-      - file: notebooks/pangeo/*
+      - glob: notebooks/pangeo/*
