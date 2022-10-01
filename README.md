@@ -80,14 +80,12 @@ Jupyter](https://foundations.projectpythia.org/foundations/getting-started-jupyt
 ### Running on Your Own Computer
 If you are interested in running this material locally on your computer, you will need to follow this workflow:
 
-(Replace "cookbook-example" with the title of your cookbooks)   
-
 1. Clone the `https://github.com/mgrover1/mscar-python-workshop-2022` repository:
 
    ```bash
     git clone https://github.com/mgrover1/mscar-python-workshop-2022.git
     ```  
-1. Move into the `cookbook-example` directory
+1. Move into the `mscar-python-workshop-2022` directory
     ```bash
     cd mscar-python-workshop-2022
     ```  
