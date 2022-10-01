@@ -3,7 +3,7 @@
 # MSCAR Python Workshop
 
 [![nightly-build](https://github.com/ProjectPythiaCookbooks/cookbook-template/actions/workflows/nightly-build.yaml/badge.svg)](https://github.com/ProjectPythiaCookbooks/cookbook-template/actions/workflows/nightly-build.yaml)
-[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/ProjectPythiaCookbooks/cookbook-template/main?labpath=notebooks)
+[![Binder](https://mybinder.org/badge_logo.svg)](https://aws-uswest2-binder.pangeo.io/v2/gh/mgrover1/mscar-python-workshop-2022/main?labpath=notebooks)
 
 
 ## Motivation
