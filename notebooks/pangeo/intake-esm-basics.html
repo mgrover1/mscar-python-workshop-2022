@@ -526,6 +526,13 @@ All code in Pythia Cookbooks is licensed under Apache 2.0. All other non-code co
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>pip install intake_esm
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">intake</span>
 <span class="kn">from</span> <span class="nn">distributed</span> <span class="kn">import</span> <span class="n">Client</span><span class="p">,</span> <span class="n">LocalCluster</span>
 <span class="kn">import</span> <span class="nn">xarray</span> <span class="k">as</span> <span class="nn">xr</span>
@@ -3174,7 +3181,7 @@ Attributes:
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/intake-esm-basics_24_0.png" src="../../_images/intake-esm-basics_24_0.png" />
+<img alt="../../_images/intake-esm-basics_25_0.png" src="../../_images/intake-esm-basics_25_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -3184,7 +3191,7 @@ Attributes:
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/intake-esm-basics_25_0.png" src="../../_images/intake-esm-basics_25_0.png" />
+<img alt="../../_images/intake-esm-basics_26_0.png" src="../../_images/intake-esm-basics_26_0.png" />
 </div>
 </div>
 <p>What if there were an easier way of searching for available data, as well as loading the data into your analysis to make it easier to generalize? This is where <code class="docutils literal notranslate"><span class="pre">Intake-ESM</span></code> comes in!</p>
@@ -6906,7 +6913,7 @@ Attributes: (12/20)
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x164f78610&gt;]
 </pre></div>
 </div>
-<img alt="../../_images/intake-esm-basics_51_1.png" src="../../_images/intake-esm-basics_51_1.png" />
+<img alt="../../_images/intake-esm-basics_52_1.png" src="../../_images/intake-esm-basics_52_1.png" />
 </div>
 </div>
 <p>As a function, this would accept a dataset, with a few parameters. We will also subset for the first 5 years (<code class="docutils literal notranslate"><span class="pre">range(60)</span></code>) for the sake of time.</p>
@@ -6933,7 +6940,7 @@ Attributes: (12/20)
   ds_subset[&#39;time&#39;] = ds_subset.indexes[&#39;time&#39;].to_datetimeindex()
 </pre></div>
 </div>
-<img alt="../../_images/intake-esm-basics_54_1.png" src="../../_images/intake-esm-basics_54_1.png" />
+<img alt="../../_images/intake-esm-basics_55_1.png" src="../../_images/intake-esm-basics_55_1.png" />
 </div>
 </div>
 </div>
@@ -6956,14 +6963,14 @@ Attributes: (12/20)
   ds_subset[&#39;time&#39;] = ds_subset.indexes[&#39;time&#39;].to_datetimeindex()
 </pre></div>
 </div>
-<img alt="../../_images/intake-esm-basics_56_1.png" src="../../_images/intake-esm-basics_56_1.png" />
+<img alt="../../_images/intake-esm-basics_57_1.png" src="../../_images/intake-esm-basics_57_1.png" />
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/Users/mgrover/miniforge3/envs/mscar-python-tutorial-dev/lib/python3.10/site-packages/xarray/coding/times.py:360: FutureWarning: Index.ravel returning ndarray is deprecated; in a future version this will return a view on self.
   sample = dates.ravel()[0]
 /var/folders/bw/c9j8z20x45s2y20vv6528qjc0000gq/T/ipykernel_84367/3553229457.py:3: RuntimeWarning: Converting a CFTimeIndex with dates from a non-standard calendar, &#39;noleap&#39;, to a pandas.DatetimeIndex, which uses dates from the standard calendar.  This may lead to subtle errors in operations that depend on the length of time between dates.
   ds_subset[&#39;time&#39;] = ds_subset.indexes[&#39;time&#39;].to_datetimeindex()
 </pre></div>
 </div>
-<img alt="../../_images/intake-esm-basics_56_3.png" src="../../_images/intake-esm-basics_56_3.png" />
+<img alt="../../_images/intake-esm-basics_57_3.png" src="../../_images/intake-esm-basics_57_3.png" />
 </div>
 </div>
 </div>
@@ -11625,8 +11632,8 @@ Attributes: (12/20)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/intake-esm-basics_61_0.png" src="../../_images/intake-esm-basics_61_0.png" />
-<img alt="../../_images/intake-esm-basics_61_1.png" src="../../_images/intake-esm-basics_61_1.png" />
+<img alt="../../_images/intake-esm-basics_62_0.png" src="../../_images/intake-esm-basics_62_0.png" />
+<img alt="../../_images/intake-esm-basics_62_1.png" src="../../_images/intake-esm-basics_62_1.png" />
 </div>
 </div>
 </div>
