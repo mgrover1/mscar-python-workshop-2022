@@ -1,7 +1,7 @@
 # Book settings
 # Learn more at https://jupyterbook.org/customize/config.html
 
-title: Project Pythia Cookbook Template
+title: MSCAR Python Workshop
 author: the <a href="https://projectpythia.org/">Project Pythia</a> Community
 logo: notebooks/images/logos/pythia_logo-white-rtext.svg
 email: projectpythia@ucar.edu
@@ -40,13 +40,13 @@ sphinx:
     html_permalinks_icon: '<i class="fas fa-link"></i>'
     html_theme_options:
       home_page_in_toc: true
-      repository_url: https://github.com/ProjectPythiaCookbooks/cookbook-template/ # Online location of your book
+      repository_url: https://github.com/mgrover1/mscar-python-workshop-2022/ # Online location of your book
       repository_branch: main # Which branch of the repository should be used when creating links (optional)
       use_issues_button: true
       use_repository_button: true
       use_edit_page_button: true
       google_analytics_id: G-T52X8HNYE8
-      github_url: https://github.com/ProjectPythiaCookbooks
+      github_url: https://github.com/mgrover1/mscar-python-workshop-2022/
       twitter_url: https://twitter.com/project_pythia
       icon_links:
         - name: YouTube
