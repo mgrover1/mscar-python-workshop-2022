@@ -2,6 +2,7 @@ name: mscar-python-tutorial-dev
 channels:
   - conda-forge
 dependencies:
+  - python=3.9
   - jupyter-book
   - jupyterlab
   - matplotlib
@@ -9,9 +10,9 @@ dependencies:
   - nc-time-axis
   - xarray-datatree
   - metpy
+  - arm_pyart
   - pip
   - pip:
-      - arm_pyart
       - act-atmos
       - intake_esm
       - sphinx-pythia-theme
