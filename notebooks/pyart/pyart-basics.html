@@ -421,9 +421,26 @@ All code in Pythia Cookbooks is licensed under Apache 2.0. All other non-code co
      Use the RadarMapDisplay with our data
     </a>
    </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#plotting-an-rhi">
+   Plotting an RHI
+  </a>
+  <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#plotting-an-rhi">
-     Plotting an RHI
+    <a class="reference internal nav-link" href="#read-in-an-rhi-file">
+     Read in an RHI file
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#plot-our-rhi">
+     Plot our RHI
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#add-a-pseudo-rhi-from-our-ppi-data">
+     Add a “Pseudo-RHI” from our PPI data
     </a>
    </li>
   </ul>
@@ -631,14 +648,14 @@ radar : Radar
 <p>When we read this in, we get a <a class="reference external" href="https://arm-doe.github.io/pyart/API/generated/pyart.core.Radar.html#pyart.core.Radar"><code class="docutils literal notranslate"><span class="pre">pyart.Radar</span></code> object</a>!</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">file</span> <span class="o">=</span> <span class="s1">&#39;../data/sample_colorado_data.nc&#39;</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">file</span> <span class="o">=</span> <span class="s1">&#39;../data/sample_sail_ppi.nc&#39;</span>
 <span class="n">radar</span> <span class="o">=</span> <span class="n">pyart</span><span class="o">.</span><span class="n">io</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="n">file</span><span class="p">)</span>
 <span class="n">radar</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;pyart.core.radar.Radar at 0x1643028c0&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;pyart.core.radar.Radar at 0x1653df880&gt;
 </pre></div>
 </div>
 </div>
@@ -1060,35 +1077,73 @@ edgecolor : str
 </div>
 </div>
 </div>
+</div>
 <div class="section" id="plotting-an-rhi">
-<h3>Plotting an RHI<a class="headerlink" href="#plotting-an-rhi" title="Permalink to this headline"><i class="fas fa-link"></i></a></h3>
+<h2>Plotting an RHI<a class="headerlink" href="#plotting-an-rhi" title="Permalink to this headline"><i class="fas fa-link"></i></a></h2>
 <p>Another common plot that is requested by the radar community is a <strong>Range Height Indicator (RHI)</strong> Plot.</p>
 <p>Fortunately, Py-ART has a utility to help us create one of these from our radar!</p>
+<div class="section" id="read-in-an-rhi-file">
+<h3>Read in an RHI file<a class="headerlink" href="#read-in-an-rhi-file" title="Permalink to this headline"><i class="fas fa-link"></i></a></h3>
+<p>During this same time period during SAIL, the ARM program collected RHI scans, which provide a vertical cross section through the preciptiation! Let’s read in one of those files. The IO line is the same!</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Create a cross section at 225 and 270 degrees azimuth</span>
-<span class="n">xsect</span> <span class="o">=</span> <span class="n">pyart</span><span class="o">.</span><span class="n">util</span><span class="o">.</span><span class="n">cross_section_ppi</span><span class="p">(</span><span class="n">radar</span><span class="p">,</span> <span class="p">[</span><span class="mi">50</span><span class="p">,</span> <span class="mi">75</span><span class="p">,</span> <span class="p">])</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">rhi_file</span> <span class="o">=</span> <span class="s1">&#39;../data/sample_sail_rhi.nc&#39;</span>
+<span class="n">rhi_radar</span> <span class="o">=</span> <span class="n">pyart</span><span class="o">.</span><span class="n">io</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="n">rhi_file</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 </div>
+</div>
+<div class="section" id="plot-our-rhi">
+<h3>Plot our RHI<a class="headerlink" href="#plot-our-rhi" title="Permalink to this headline"><i class="fas fa-link"></i></a></h3>
+<p>We want to use the <code class="docutils literal notranslate"><span class="pre">RadarDisplay</span></code> here to visualize, using the reflectivity field (<code class="docutils literal notranslate"><span class="pre">DBZ</span></code>)</p>
+<p><strong>Note - this is uncorrected data, so be sure take caution working with this</strong></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">radar</span> <span class="o">=</span> <span class="n">pyart</span><span class="o">.</span><span class="n">graph</span><span class="o">.</span><span class="n">RadarDisplay</span><span class="p">(</span><span class="n">rhi_radar</span><span class="p">)</span>
+<span class="n">radar</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="s2">&quot;DBZ&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">5</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/pyart-basics_47_0.png" src="../../_images/pyart-basics_47_0.png" />
+</div>
+</div>
+</div>
+<div class="section" id="add-a-pseudo-rhi-from-our-ppi-data">
+<h3>Add a “Pseudo-RHI” from our PPI data<a class="headerlink" href="#add-a-pseudo-rhi-from-our-ppi-data" title="Permalink to this headline"><i class="fas fa-link"></i></a></h3>
+<p>But let’s say we wanted to compare the vertical resolution we get from an RHI, compared to PPI… we can do this with Py-ART!</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Load our PPI data back in</span>
+<span class="n">file</span> <span class="o">=</span> <span class="s1">&#39;../data/sample_sail_ppi.nc&#39;</span>
+<span class="n">radar</span> <span class="o">=</span> <span class="n">pyart</span><span class="o">.</span><span class="n">io</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="n">file</span><span class="p">)</span>
+<span class="n">radar</span>
+
+<span class="c1"># Create a cross section at our 334 degree azimuth</span>
+<span class="n">xsect</span> <span class="o">=</span> <span class="n">pyart</span><span class="o">.</span><span class="n">util</span><span class="o">.</span><span class="n">cross_section_ppi</span><span class="p">(</span><span class="n">radar</span><span class="p">,</span> <span class="p">[</span><span class="mi">328</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now, notice a few things in this plot</p>
+<ul class="simple">
+<li><p>How coarse the resolution of the precipitation region is</p></li>
+<li><p>The correction for attenuation in this data field, compared to the raw reflectivity</p></li>
+</ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">colorbar_label</span> <span class="o">=</span> <span class="s1">&#39;Equivalent </span><span class="se">\n</span><span class="s1"> reflectivity factor </span><span class="se">\n</span><span class="s1"> (dBZ)&#39;</span>
 <span class="n">display</span> <span class="o">=</span> <span class="n">pyart</span><span class="o">.</span><span class="n">graph</span><span class="o">.</span><span class="n">RadarDisplay</span><span class="p">(</span><span class="n">xsect</span><span class="p">)</span>
-<span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span> <span class="mi">8</span><span class="p">))</span>
-<span class="n">ax1</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">211</span><span class="p">)</span>
 <span class="n">display</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="s1">&#39;corrected_reflectivity&#39;</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">vmin</span><span class="o">=-</span><span class="mi">32</span><span class="p">,</span> <span class="n">vmax</span><span class="o">=</span><span class="mf">64.</span><span class="p">,</span> <span class="n">colorbar_label</span><span class="o">=</span><span class="n">colorbar_label</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
-<span class="n">ax2</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">212</span><span class="p">)</span>
-<span class="n">display</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="s1">&#39;corrected_reflectivity&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">vmin</span><span class="o">=-</span><span class="mi">32</span><span class="p">,</span> <span class="n">vmax</span><span class="o">=</span><span class="mf">64.</span><span class="p">,</span> <span class="n">colorbar_label</span><span class="o">=</span><span class="n">colorbar_label</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/pyart-basics_45_0.png" src="../../_images/pyart-basics_45_0.png" />
+<img alt="../../_images/pyart-basics_51_0.png" src="../../_images/pyart-basics_51_0.png" />
 </div>
 </div>
 </div>
