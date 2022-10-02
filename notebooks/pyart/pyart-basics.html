@@ -546,6 +546,22 @@ All code in Pythia Cookbooks is licensed under Apache 2.0. All other non-code co
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>## You are using the Python ARM Radar Toolkit (Py-ART), an open source
+## library for working with weather radar data. Py-ART is partly
+## supported by the U.S. Department of Energy as part of the Atmospheric
+## Radiation Measurement (ARM) Climate Research Facility, an Office of
+## Science user facility.
+##
+## If you use this software to prepare a publication, please cite:
+##
+##     JJ Helmus and SM Collis, JORS 2016, doi: 10.5334/jors.119
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;frozen importlib._bootstrap&gt;:283: DeprecationWarning: the load_module() method is deprecated and slated for removal in Python 3.12; use exec_module() instead
+</pre></div>
+</div>
+</div>
 </div>
 </div>
 <div class="section" id="an-overview-of-py-art">
@@ -675,7 +691,7 @@ radar : Radar
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;pyart.core.radar.Radar at 0x1653df880&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;pyart.core.radar.Radar at 0x13c6454e0&gt;
 </pre></div>
 </div>
 </div>
@@ -1121,7 +1137,7 @@ edgecolor : str
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">radar</span> <span class="o">=</span> <span class="n">pyart</span><span class="o">.</span><span class="n">graph</span><span class="o">.</span><span class="n">RadarDisplay</span><span class="p">(</span><span class="n">rhi_radar</span><span class="p">)</span>
-<span class="n">radar</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="s2">&quot;DBZ&quot;</span><span class="p">)</span>
+<span class="n">radar</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="s2">&quot;DBZ&quot;</span><span class="p">,</span> <span class="n">vmin</span><span class="o">=-</span><span class="mi">20</span><span class="p">,</span> <span class="n">vmax</span><span class="o">=</span><span class="mi">60</span><span class="p">,)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">5</span><span class="p">);</span>
 </pre></div>
 </div>
@@ -1147,16 +1163,12 @@ edgecolor : str
 </div>
 </div>
 </div>
-<p>Now, notice a few things in this plot</p>
-<ul class="simple">
-<li><p>How coarse the resolution of the precipitation region is</p></li>
-<li><p>The correction for attenuation in this data field, compared to the raw reflectivity</p></li>
-</ul>
+<p>Now, notice how coarse the resolution of the precipitation region!</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">colorbar_label</span> <span class="o">=</span> <span class="s1">&#39;Equivalent </span><span class="se">\n</span><span class="s1"> reflectivity factor </span><span class="se">\n</span><span class="s1"> (dBZ)&#39;</span>
 <span class="n">display</span> <span class="o">=</span> <span class="n">pyart</span><span class="o">.</span><span class="n">graph</span><span class="o">.</span><span class="n">RadarDisplay</span><span class="p">(</span><span class="n">xsect</span><span class="p">)</span>
-<span class="n">display</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="s1">&#39;corrected_reflectivity&#39;</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">vmin</span><span class="o">=-</span><span class="mi">32</span><span class="p">,</span> <span class="n">vmax</span><span class="o">=</span><span class="mf">64.</span><span class="p">,</span> <span class="n">colorbar_label</span><span class="o">=</span><span class="n">colorbar_label</span><span class="p">)</span>
+<span class="n">display</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="s1">&#39;corrected_reflectivity&#39;</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">vmin</span><span class="o">=-</span><span class="mi">20</span><span class="p">,</span> <span class="n">vmax</span><span class="o">=</span><span class="mi">60</span><span class="p">,</span> <span class="n">colorbar_label</span><span class="o">=</span><span class="n">colorbar_label</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
 </pre></div>
