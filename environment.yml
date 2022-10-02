@@ -1,6 +1,7 @@
 name: mscar-python-tutorial-dev
 channels:
   - conda-forge
+  - pyviz
 dependencies:
   - python=3.9
   - jupyter-book
@@ -11,6 +12,10 @@ dependencies:
   - xarray-datatree
   - metpy
   - arm_pyart
+  - hvplot
+  - holoviews
+  - geoviews
+  - datashader
   - pip
   - pip:
       - act-atmos
