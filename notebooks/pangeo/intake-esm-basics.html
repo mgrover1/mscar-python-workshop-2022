@@ -526,13 +526,6 @@ All code in Pythia Cookbooks is licensed under Apache 2.0. All other non-code co
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>pip install intake_esm
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">intake</span>
 <span class="kn">from</span> <span class="nn">distributed</span> <span class="kn">import</span> <span class="n">Client</span><span class="p">,</span> <span class="n">LocalCluster</span>
 <span class="kn">import</span> <span class="nn">xarray</span> <span class="k">as</span> <span class="nn">xr</span>
@@ -555,18 +548,17 @@ All code in Pythia Cookbooks is licensed under Apache 2.0. All other non-code co
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2022-09-23 10:48:17,437 - distributed.diskutils - INFO - Found stale lock file and directory &#39;/var/folders/bw/c9j8z20x45s2y20vv6528qjc0000gq/T/dask-worker-space/worker-ksufr520&#39;, purging
-2022-09-23 10:48:17,437 - distributed.diskutils - INFO - Found stale lock file and directory &#39;/var/folders/bw/c9j8z20x45s2y20vv6528qjc0000gq/T/dask-worker-space/worker-as03sqns&#39;, purging
-2022-09-23 10:48:17,437 - distributed.diskutils - INFO - Found stale lock file and directory &#39;/var/folders/bw/c9j8z20x45s2y20vv6528qjc0000gq/T/dask-worker-space/worker-hfjdql1_&#39;, purging
-2022-09-23 10:48:17,438 - distributed.diskutils - INFO - Found stale lock file and directory &#39;/var/folders/bw/c9j8z20x45s2y20vv6528qjc0000gq/T/dask-worker-space/worker-tmw34p39&#39;, purging
-2022-09-23 10:48:17,438 - distributed.diskutils - INFO - Found stale lock file and directory &#39;/var/folders/bw/c9j8z20x45s2y20vv6528qjc0000gq/T/dask-worker-space/worker-q7dzuvq9&#39;, purging
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/Users/mgrover/miniforge3/envs/mscar-python-tutorial-dev/lib/python3.10/site-packages/distributed/node.py:183: UserWarning: Port 8787 is already in use.
+Perhaps you already have a cluster running?
+Hosting the HTTP server on port 57407 instead
+  warnings.warn(
 </pre></div>
 </div>
 <div class="output text_html"><div>
     <div style="width: 24px; height: 24px; background-color: #e1e1e1; border: 3px solid #9D9D9D; border-radius: 5px; position: absolute;"> </div>
     <div style="margin-left: 48px;">
         <h3 style="margin-bottom: 0px;">Client</h3>
-        <p style="color: #9D9D9D; margin-bottom: 0px;">Client-245db92a-3b57-11ed-898f-520a01803a93</p>
+        <p style="color: #9D9D9D; margin-bottom: 0px;">Client-c8ff070e-420f-11ed-a074-520a01803a93</p>
         <table style="width: 100%; text-align: left;">
 
         <tr>
@@ -579,7 +571,7 @@ All code in Pythia Cookbooks is licensed under Apache 2.0. All other non-code co
 
             <tr>
                 <td style="text-align: left;">
-                    <strong>Dashboard: </strong> <a href="http://127.0.0.1:8787/status" target="_blank">http://127.0.0.1:8787/status</a>
+                    <strong>Dashboard: </strong> <a href="http://127.0.0.1:57407/status" target="_blank">http://127.0.0.1:57407/status</a>
                 </td>
                 <td style="text-align: left;"></td>
             </tr>
@@ -595,11 +587,11 @@ All code in Pythia Cookbooks is licensed under Apache 2.0. All other non-code co
     </div>
     <div style="margin-left: 48px;">
         <h3 style="margin-bottom: 0px; margin-top: 0px;">LocalCluster</h3>
-        <p style="color: #9D9D9D; margin-bottom: 0px;">2d5703e9</p>
+        <p style="color: #9D9D9D; margin-bottom: 0px;">7c72d1a8</p>
         <table style="width: 100%; text-align: left;">
             <tr>
                 <td style="text-align: left;">
-                    <strong>Dashboard:</strong> <a href="http://127.0.0.1:8787/status" target="_blank">http://127.0.0.1:8787/status</a>
+                    <strong>Dashboard:</strong> <a href="http://127.0.0.1:57407/status" target="_blank">http://127.0.0.1:57407/status</a>
                 </td>
                 <td style="text-align: left;">
                     <strong>Workers:</strong> 5
@@ -632,11 +624,11 @@ All code in Pythia Cookbooks is licensed under Apache 2.0. All other non-code co
         <div style="width: 24px; height: 24px; background-color: #FFF7E5; border: 3px solid #FF6132; border-radius: 5px; position: absolute;"> </div>
         <div style="margin-left: 48px;">
             <h3 style="margin-bottom: 0px;">Scheduler</h3>
-            <p style="color: #9D9D9D; margin-bottom: 0px;">Scheduler-1914b800-5c5c-4e28-bb20-2aeb95a2aeaa</p>
+            <p style="color: #9D9D9D; margin-bottom: 0px;">Scheduler-9e871823-4c3b-4f19-9efa-61d916417a76</p>
             <table style="width: 100%; text-align: left;">
                 <tr>
                     <td style="text-align: left;">
-                        <strong>Comm:</strong> tcp://127.0.0.1:58862
+                        <strong>Comm:</strong> tcp://127.0.0.1:57408
                     </td>
                     <td style="text-align: left;">
                         <strong>Workers:</strong> 5
@@ -644,7 +636,7 @@ All code in Pythia Cookbooks is licensed under Apache 2.0. All other non-code co
                 </tr>
                 <tr>
                     <td style="text-align: left;">
-                        <strong>Dashboard:</strong> <a href="http://127.0.0.1:8787/status" target="_blank">http://127.0.0.1:8787/status</a>
+                        <strong>Dashboard:</strong> <a href="http://127.0.0.1:57407/status" target="_blank">http://127.0.0.1:57407/status</a>
                     </td>
                     <td style="text-align: left;">
                         <strong>Total threads:</strong> 10
@@ -678,7 +670,7 @@ All code in Pythia Cookbooks is licensed under Apache 2.0. All other non-code co
                 <table style="width: 100%; text-align: left;">
                     <tr>
                         <td style="text-align: left;">
-                            <strong>Comm: </strong> tcp://127.0.0.1:58880
+                            <strong>Comm: </strong> tcp://127.0.0.1:57432
                         </td>
                         <td style="text-align: left;">
                             <strong>Total threads: </strong> 2
@@ -686,7 +678,7 @@ All code in Pythia Cookbooks is licensed under Apache 2.0. All other non-code co
                     </tr>
                     <tr>
                         <td style="text-align: left;">
-                            <strong>Dashboard: </strong> <a href="http://127.0.0.1:58883/status" target="_blank">http://127.0.0.1:58883/status</a>
+                            <strong>Dashboard: </strong> <a href="http://127.0.0.1:57433/status" target="_blank">http://127.0.0.1:57433/status</a>
                         </td>
                         <td style="text-align: left;">
                             <strong>Memory: </strong> 6.40 GiB
@@ -694,13 +686,13 @@ All code in Pythia Cookbooks is licensed under Apache 2.0. All other non-code co
                     </tr>
                     <tr>
                         <td style="text-align: left;">
-                            <strong>Nanny: </strong> tcp://127.0.0.1:58867
+                            <strong>Nanny: </strong> tcp://127.0.0.1:57413
                         </td>
                         <td style="text-align: left;"></td>
                     </tr>
                     <tr>
                         <td colspan="2" style="text-align: left;">
-                            <strong>Local directory: </strong> /var/folders/bw/c9j8z20x45s2y20vv6528qjc0000gq/T/dask-worker-space/worker-hgnqs1tt
+                            <strong>Local directory: </strong> /var/folders/bw/c9j8z20x45s2y20vv6528qjc0000gq/T/dask-worker-space/worker-c789voz8
                         </td>
                     </tr>
 
@@ -723,7 +715,7 @@ All code in Pythia Cookbooks is licensed under Apache 2.0. All other non-code co
                 <table style="width: 100%; text-align: left;">
                     <tr>
                         <td style="text-align: left;">
-                            <strong>Comm: </strong> tcp://127.0.0.1:58882
+                            <strong>Comm: </strong> tcp://127.0.0.1:57427
                         </td>
                         <td style="text-align: left;">
                             <strong>Total threads: </strong> 2
@@ -731,7 +723,7 @@ All code in Pythia Cookbooks is licensed under Apache 2.0. All other non-code co
                     </tr>
                     <tr>
                         <td style="text-align: left;">
-                            <strong>Dashboard: </strong> <a href="http://127.0.0.1:58887/status" target="_blank">http://127.0.0.1:58887/status</a>
+                            <strong>Dashboard: </strong> <a href="http://127.0.0.1:57429/status" target="_blank">http://127.0.0.1:57429/status</a>
                         </td>
                         <td style="text-align: left;">
                             <strong>Memory: </strong> 6.40 GiB
@@ -739,13 +731,13 @@ All code in Pythia Cookbooks is licensed under Apache 2.0. All other non-code co
                     </tr>
                     <tr>
                         <td style="text-align: left;">
-                            <strong>Nanny: </strong> tcp://127.0.0.1:58865
+                            <strong>Nanny: </strong> tcp://127.0.0.1:57412
                         </td>
                         <td style="text-align: left;"></td>
                     </tr>
                     <tr>
                         <td colspan="2" style="text-align: left;">
-                            <strong>Local directory: </strong> /var/folders/bw/c9j8z20x45s2y20vv6528qjc0000gq/T/dask-worker-space/worker-u28dp43q
+                            <strong>Local directory: </strong> /var/folders/bw/c9j8z20x45s2y20vv6528qjc0000gq/T/dask-worker-space/worker-yiv0bk22
                         </td>
                     </tr>
 
@@ -768,7 +760,7 @@ All code in Pythia Cookbooks is licensed under Apache 2.0. All other non-code co
                 <table style="width: 100%; text-align: left;">
                     <tr>
                         <td style="text-align: left;">
-                            <strong>Comm: </strong> tcp://127.0.0.1:58890
+                            <strong>Comm: </strong> tcp://127.0.0.1:57435
                         </td>
                         <td style="text-align: left;">
                             <strong>Total threads: </strong> 2
@@ -776,7 +768,7 @@ All code in Pythia Cookbooks is licensed under Apache 2.0. All other non-code co
                     </tr>
                     <tr>
                         <td style="text-align: left;">
-                            <strong>Dashboard: </strong> <a href="http://127.0.0.1:58893/status" target="_blank">http://127.0.0.1:58893/status</a>
+                            <strong>Dashboard: </strong> <a href="http://127.0.0.1:57437/status" target="_blank">http://127.0.0.1:57437/status</a>
                         </td>
                         <td style="text-align: left;">
                             <strong>Memory: </strong> 6.40 GiB
@@ -784,13 +776,13 @@ All code in Pythia Cookbooks is licensed under Apache 2.0. All other non-code co
                     </tr>
                     <tr>
                         <td style="text-align: left;">
-                            <strong>Nanny: </strong> tcp://127.0.0.1:58869
+                            <strong>Nanny: </strong> tcp://127.0.0.1:57415
                         </td>
                         <td style="text-align: left;"></td>
                     </tr>
                     <tr>
                         <td colspan="2" style="text-align: left;">
-                            <strong>Local directory: </strong> /var/folders/bw/c9j8z20x45s2y20vv6528qjc0000gq/T/dask-worker-space/worker-w4jbalxz
+                            <strong>Local directory: </strong> /var/folders/bw/c9j8z20x45s2y20vv6528qjc0000gq/T/dask-worker-space/worker-hetk3utz
                         </td>
                     </tr>
 
@@ -813,7 +805,7 @@ All code in Pythia Cookbooks is licensed under Apache 2.0. All other non-code co
                 <table style="width: 100%; text-align: left;">
                     <tr>
                         <td style="text-align: left;">
-                            <strong>Comm: </strong> tcp://127.0.0.1:58881
+                            <strong>Comm: </strong> tcp://127.0.0.1:57426
                         </td>
                         <td style="text-align: left;">
                             <strong>Total threads: </strong> 2
@@ -821,7 +813,7 @@ All code in Pythia Cookbooks is licensed under Apache 2.0. All other non-code co
                     </tr>
                     <tr>
                         <td style="text-align: left;">
-                            <strong>Dashboard: </strong> <a href="http://127.0.0.1:58885/status" target="_blank">http://127.0.0.1:58885/status</a>
+                            <strong>Dashboard: </strong> <a href="http://127.0.0.1:57428/status" target="_blank">http://127.0.0.1:57428/status</a>
                         </td>
                         <td style="text-align: left;">
                             <strong>Memory: </strong> 6.40 GiB
@@ -829,13 +821,13 @@ All code in Pythia Cookbooks is licensed under Apache 2.0. All other non-code co
                     </tr>
                     <tr>
                         <td style="text-align: left;">
-                            <strong>Nanny: </strong> tcp://127.0.0.1:58866
+                            <strong>Nanny: </strong> tcp://127.0.0.1:57411
                         </td>
                         <td style="text-align: left;"></td>
                     </tr>
                     <tr>
                         <td colspan="2" style="text-align: left;">
-                            <strong>Local directory: </strong> /var/folders/bw/c9j8z20x45s2y20vv6528qjc0000gq/T/dask-worker-space/worker-iabqg3n6
+                            <strong>Local directory: </strong> /var/folders/bw/c9j8z20x45s2y20vv6528qjc0000gq/T/dask-worker-space/worker-ef2rd9n4
                         </td>
                     </tr>
 
@@ -858,7 +850,7 @@ All code in Pythia Cookbooks is licensed under Apache 2.0. All other non-code co
                 <table style="width: 100%; text-align: left;">
                     <tr>
                         <td style="text-align: left;">
-                            <strong>Comm: </strong> tcp://127.0.0.1:58889
+                            <strong>Comm: </strong> tcp://127.0.0.1:57436
                         </td>
                         <td style="text-align: left;">
                             <strong>Total threads: </strong> 2
@@ -866,7 +858,7 @@ All code in Pythia Cookbooks is licensed under Apache 2.0. All other non-code co
                     </tr>
                     <tr>
                         <td style="text-align: left;">
-                            <strong>Dashboard: </strong> <a href="http://127.0.0.1:58891/status" target="_blank">http://127.0.0.1:58891/status</a>
+                            <strong>Dashboard: </strong> <a href="http://127.0.0.1:57439/status" target="_blank">http://127.0.0.1:57439/status</a>
                         </td>
                         <td style="text-align: left;">
                             <strong>Memory: </strong> 6.40 GiB
@@ -874,13 +866,13 @@ All code in Pythia Cookbooks is licensed under Apache 2.0. All other non-code co
                     </tr>
                     <tr>
                         <td style="text-align: left;">
-                            <strong>Nanny: </strong> tcp://127.0.0.1:58868
+                            <strong>Nanny: </strong> tcp://127.0.0.1:57414
                         </td>
                         <td style="text-align: left;"></td>
                     </tr>
                     <tr>
                         <td colspan="2" style="text-align: left;">
-                            <strong>Local directory: </strong> /var/folders/bw/c9j8z20x45s2y20vv6528qjc0000gq/T/dask-worker-space/worker-b1jcakzi
+                            <strong>Local directory: </strong> /var/folders/bw/c9j8z20x45s2y20vv6528qjc0000gq/T/dask-worker-space/worker-ivhltpnd
                         </td>
                     </tr>
 
@@ -3181,7 +3173,7 @@ Attributes:
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/intake-esm-basics_25_0.png" src="../../_images/intake-esm-basics_25_0.png" />
+<img alt="../../_images/intake-esm-basics_24_0.png" src="../../_images/intake-esm-basics_24_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -3191,7 +3183,7 @@ Attributes:
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/intake-esm-basics_26_0.png" src="../../_images/intake-esm-basics_26_0.png" />
+<img alt="../../_images/intake-esm-basics_25_0.png" src="../../_images/intake-esm-basics_25_0.png" />
 </div>
 </div>
 <p>What if there were an easier way of searching for available data, as well as loading the data into your analysis to make it easier to generalize? This is where <code class="docutils literal notranslate"><span class="pre">Intake-ESM</span></code> comes in!</p>
@@ -6913,7 +6905,7 @@ Attributes: (12/20)
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x164f78610&gt;]
 </pre></div>
 </div>
-<img alt="../../_images/intake-esm-basics_52_1.png" src="../../_images/intake-esm-basics_52_1.png" />
+<img alt="../../_images/intake-esm-basics_51_1.png" src="../../_images/intake-esm-basics_51_1.png" />
 </div>
 </div>
 <p>As a function, this would accept a dataset, with a few parameters. We will also subset for the first 5 years (<code class="docutils literal notranslate"><span class="pre">range(60)</span></code>) for the sake of time.</p>
@@ -6940,7 +6932,7 @@ Attributes: (12/20)
   ds_subset[&#39;time&#39;] = ds_subset.indexes[&#39;time&#39;].to_datetimeindex()
 </pre></div>
 </div>
-<img alt="../../_images/intake-esm-basics_55_1.png" src="../../_images/intake-esm-basics_55_1.png" />
+<img alt="../../_images/intake-esm-basics_54_1.png" src="../../_images/intake-esm-basics_54_1.png" />
 </div>
 </div>
 </div>
@@ -6963,14 +6955,14 @@ Attributes: (12/20)
   ds_subset[&#39;time&#39;] = ds_subset.indexes[&#39;time&#39;].to_datetimeindex()
 </pre></div>
 </div>
-<img alt="../../_images/intake-esm-basics_57_1.png" src="../../_images/intake-esm-basics_57_1.png" />
+<img alt="../../_images/intake-esm-basics_56_1.png" src="../../_images/intake-esm-basics_56_1.png" />
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/Users/mgrover/miniforge3/envs/mscar-python-tutorial-dev/lib/python3.10/site-packages/xarray/coding/times.py:360: FutureWarning: Index.ravel returning ndarray is deprecated; in a future version this will return a view on self.
   sample = dates.ravel()[0]
 /var/folders/bw/c9j8z20x45s2y20vv6528qjc0000gq/T/ipykernel_84367/3553229457.py:3: RuntimeWarning: Converting a CFTimeIndex with dates from a non-standard calendar, &#39;noleap&#39;, to a pandas.DatetimeIndex, which uses dates from the standard calendar.  This may lead to subtle errors in operations that depend on the length of time between dates.
   ds_subset[&#39;time&#39;] = ds_subset.indexes[&#39;time&#39;].to_datetimeindex()
 </pre></div>
 </div>
-<img alt="../../_images/intake-esm-basics_57_3.png" src="../../_images/intake-esm-basics_57_3.png" />
+<img alt="../../_images/intake-esm-basics_56_3.png" src="../../_images/intake-esm-basics_56_3.png" />
 </div>
 </div>
 </div>
@@ -11632,8 +11624,8 @@ Attributes: (12/20)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/intake-esm-basics_62_0.png" src="../../_images/intake-esm-basics_62_0.png" />
-<img alt="../../_images/intake-esm-basics_62_1.png" src="../../_images/intake-esm-basics_62_1.png" />
+<img alt="../../_images/intake-esm-basics_61_0.png" src="../../_images/intake-esm-basics_61_0.png" />
+<img alt="../../_images/intake-esm-basics_61_1.png" src="../../_images/intake-esm-basics_61_1.png" />
 </div>
 </div>
 </div>
