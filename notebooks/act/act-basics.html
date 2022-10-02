@@ -428,6 +428,28 @@ All code in Pythia Cookbooks is licensed under Apache 2.0. All other non-code co
      Radiosonde Plotting and More!
     </a>
    </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#look-at-data-from-sail">
+     Look at Data from SAIL
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#load-in-the-data">
+       Load in the Data
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#visualize-using-the-timeseriesdisplay">
+       Visualize using the TimeSeriesDisplay
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#conclusions-and-additional-resources">
+     Conclusions and Additional Resources
+    </a>
+   </li>
   </ul>
  </li>
 </ul>
@@ -17466,7 +17488,82 @@ PBL Height =  950
 </div>
 </div>
 </div>
+</div>
 <hr class="docutils" />
+<div class="section" id="look-at-data-from-sail">
+<h2>Look at Data from SAIL<a class="headerlink" href="#look-at-data-from-sail" title="Permalink to this headline"><i class="fas fa-link"></i></a></h2>
+<p>ACT is not just limited in ARM data… you can also work with data from other organizations, such as NOAA!</p>
+<p>During the SAIL and SPLASH field campaigns in Colorado, they deployed a NOAA Snow Level Radar, “FMCW”, around the domain. Let’s download and plot some data! In addition to this radar data, we can also read in some Parsivel data, which is a Laser Disdrometer!</p>
+<div class="section" id="load-in-the-data">
+<h3>Load in the Data<a class="headerlink" href="#load-in-the-data" title="Permalink to this headline"><i class="fas fa-link"></i></a></h3>
+<p>We use the <code class="docutils literal notranslate"><span class="pre">act.discovery</span></code> module to load in data for the PSL, and remotely read in the data for the Parsivel data.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Use the ACT downloader to download a file from the</span>
+<span class="c1"># Kettle Ponds site on 8/01/2022 between 2200 and 2300 UTC.</span>
+<span class="n">data_22_utc</span> <span class="o">=</span> <span class="n">act</span><span class="o">.</span><span class="n">discovery</span><span class="o">.</span><span class="n">download_noaa_psl_data</span><span class="p">(</span>
+    <span class="n">site</span><span class="o">=</span><span class="s1">&#39;kps&#39;</span><span class="p">,</span> <span class="n">instrument</span><span class="o">=</span><span class="s1">&#39;Radar FMCW Moment&#39;</span><span class="p">,</span> <span class="n">startdate</span><span class="o">=</span><span class="s1">&#39;20220801&#39;</span><span class="p">,</span> <span class="n">hour</span><span class="o">=</span><span class="s1">&#39;22&#39;</span><span class="p">)</span>
+<span class="n">data_23_utc</span> <span class="o">=</span> <span class="n">act</span><span class="o">.</span><span class="n">discovery</span><span class="o">.</span><span class="n">download_noaa_psl_data</span><span class="p">(</span>
+    <span class="n">site</span><span class="o">=</span><span class="s1">&#39;kps&#39;</span><span class="p">,</span> <span class="n">instrument</span><span class="o">=</span><span class="s1">&#39;Radar FMCW Moment&#39;</span><span class="p">,</span> <span class="n">startdate</span><span class="o">=</span><span class="s1">&#39;20220801&#39;</span><span class="p">,</span> <span class="n">hour</span><span class="o">=</span><span class="s1">&#39;23&#39;</span><span class="p">)</span>
+
+<span class="c1"># Read in the .raw files from both hours. Spectra data are also downloaded.</span>
+<span class="n">radar_ds</span> <span class="o">=</span> <span class="n">act</span><span class="o">.</span><span class="n">io</span><span class="o">.</span><span class="n">noaapsl</span><span class="o">.</span><span class="n">read_psl_radar_fmcw_moment</span><span class="p">([</span><span class="n">result_22</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="n">result_23</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]])</span>
+
+<span class="c1"># Read in the parsivel text files.</span>
+<span class="n">url</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;https://downloads.psl.noaa.gov/psd2/data/realtime/DisdrometerParsivel/Stats/kps/2022/213/kps2221322_stats.txt&#39;</span><span class="p">,</span>
+       <span class="s1">&#39;https://downloads.psl.noaa.gov/psd2/data/realtime/DisdrometerParsivel/Stats/kps/2022/213/kps2221323_stats.txt&#39;</span><span class="p">]</span>
+<span class="n">parsivel_ds</span> <span class="o">=</span> <span class="n">act</span><span class="o">.</span><span class="n">io</span><span class="o">.</span><span class="n">noaapsl</span><span class="o">.</span><span class="n">read_psl_parsivel</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading dkps2221322a.mom
+Downloading hkps2221322a.mom
+Downloading kps2221322.raw
+Downloading dkps2221323a.mom
+Downloading hkps2221323a.mom
+Downloading kps2221323.raw
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="visualize-using-the-timeseriesdisplay">
+<h3>Visualize using the TimeSeriesDisplay<a class="headerlink" href="#visualize-using-the-timeseriesdisplay" title="Permalink to this headline"><i class="fas fa-link"></i></a></h3>
+<p>Now that we have our data, we can visualize it using a <code class="docutils literal notranslate"><span class="pre">TimeSeriesDisplay</span></code>!</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Create a TimeSeriesDisplay object using both datasets.</span>
+<span class="n">display</span> <span class="o">=</span> <span class="n">act</span><span class="o">.</span><span class="n">plotting</span><span class="o">.</span><span class="n">TimeSeriesDisplay</span><span class="p">(</span>
+    <span class="p">{</span><span class="s2">&quot;NOAA Site KPS PSL Radar FMCW&quot;</span><span class="p">:</span> <span class="n">radar_ds</span><span class="p">,</span> <span class="s2">&quot;NOAA Site KPS Parsivel&quot;</span><span class="p">:</span> <span class="n">parsivel_ds</span><span class="p">},</span>
+    <span class="n">subplot_shape</span><span class="o">=</span><span class="p">(</span><span class="mi">2</span><span class="p">,),</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">))</span>
+
+<span class="c1"># Plot PSL Radar followed by the parsivel data.</span>
+<span class="n">display</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="s1">&#39;reflectivity_uncalibrated&#39;</span><span class="p">,</span> <span class="n">dsname</span><span class="o">=</span><span class="s1">&#39;NOAA Site KPS PSL Radar FMCW&#39;</span><span class="p">,</span>
+             <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;act_HomeyerRainbow&#39;</span><span class="p">,</span> <span class="n">subplot_index</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,))</span>
+<span class="n">display</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="s1">&#39;number_density_drops&#39;</span><span class="p">,</span> <span class="n">dsname</span><span class="o">=</span><span class="s1">&#39;NOAA Site KPS Parsivel&#39;</span><span class="p">,</span>
+             <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;act_HomeyerRainbow&#39;</span><span class="p">,</span> <span class="n">subplot_index</span><span class="o">=</span><span class="p">(</span><span class="mi">1</span><span class="p">,))</span>
+<span class="c1"># Adjust ylims of parsivel plot.</span>
+<span class="n">display</span><span class="o">.</span><span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/act-basics_36_0.png" src="../../_images/act-basics_36_0.png" />
+</div>
+</div>
+</div>
+</div>
+<hr class="docutils" />
+<div class="section" id="conclusions-and-additional-resources">
+<h2>Conclusions and Additional Resources<a class="headerlink" href="#conclusions-and-additional-resources" title="Permalink to this headline"><i class="fas fa-link"></i></a></h2>
+<p>Within this notebook, we detailed the key functionality of the Atmospheric data Community Toolkit (ACT), and how to go about analyzing different atmospheric and climate datasets using this package.</p>
+<p>If you are interested in additional examples, be sure to check out:</p>
+<ul class="simple">
+<li><p>The <a class="reference external" href="https://arm-doe.github.io/ACT/source/auto_examples/index.html">ACT Example Gallery</a></p></li>
+<li><p>Our <a class="reference external" href="https://arm-development.github.io/sail-xprecip-radar/radar-precip/plot-method-description-figure.html">SAIL precipitation estimation from radar repository</a></p></li>
+</ul>
 </div>
 </div>
 
