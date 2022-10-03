@@ -52,7 +52,7 @@ The JupyterHub instance we use for this course is relatively small in memory and
 Now that we have our authentication set up, we can access our content!
 
 Use the following link to launch into the binder:
-- [Binder Link](https://aws-uswest2-binder.pangeo.io/v2/gh/mgrover1/mscar-python-workshop-dev/main?labpath=notebooks)
+- [Binder Link](https://aws-uswest2-binder.pangeo.io/v2/gh/mgrover1/mscar-python-workshop-2022/main?labpath=notebooks)
 
 If you are having issues with that (ex. it is taking a long time), try using the following link:
 ```
