@@ -12,13 +12,18 @@ This material will be used to provide an overview of how to use Python for the a
 
 ## Authors
 
-[Max Grover](@mgrover1)
+[Max Grover](@mgrover1) [Zach Sherman](zssherman) [Scott Collis](@scollis) [Adam Theisen](@AdamTheisen)
 
 ### Contributors
 
 <a href="https://github.com/mgrover1/mscar-python-workshop-2022/graphs/contributors">
   <img src="https://contrib.rocks/image?repo=mgrover1/mscar-python-workshop-2022" />
 </a>
+
+## Workshop Recording
+The recording for this workshop can be found here!
+
+[![MSCAR Python Workshop 2022](https://img.youtube.com/vi/aNeAtaJWA5M/0.jpg)](https://youtu.be/aNeAtaJWA5M)
 
 ## Structure
 
